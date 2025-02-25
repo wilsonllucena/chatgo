@@ -1,0 +1,11 @@
+Criar um sistema para auxiliar professores a criarem execicios para suas aulas.
+
+Regras de negócio:
+- A entrada do sistema será via chat, onde o professor irá enviar mensagens para o sistema.
+- O sistema irá responder as mensagens do professor com os exercícios criados.
+- O sistema irá salvar os exercícios criados em um banco de dados.
+- O sistema irá exibir os exercícios criados em uma interface web.
+- O sistema irá exibir as respostas dos exercícios em uma interface web.
+- O sistema irá salvar as respostas dos exercícios em um banco de dados.
+- O sistema terá funcionalidade para gerar o arquivo de exercícios em formato PDF e Word.
+
