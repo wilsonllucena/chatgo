@@ -7,7 +7,7 @@ import (
 	"syscall"
 
 	"github.com/joho/godotenv"
-	"github.com/wilsonllucena/teacher-agent/cmd/api"
+	"github.com/wilsonllucena/chatgo/cmd/api"
 )
 
 func main() {

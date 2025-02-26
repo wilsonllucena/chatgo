@@ -8,7 +8,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
-	chat_router "github.com/wilsonllucena/teacher-agent/internal/router"
+	chat_router "github.com/wilsonllucena/chatgo/internal/router"
 )
 
 // Run inicia o servidor da API

@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	openai "github.com/sashabaranov/go-openai"
-	"github.com/wilsonllucena/teacher-agent/config"
-	"github.com/wilsonllucena/teacher-agent/internal/entity"
+	"github.com/wilsonllucena/chatgo/config"
+	"github.com/wilsonllucena/chatgo/internal/entity"
 )
 
 type ChatGPT struct {
