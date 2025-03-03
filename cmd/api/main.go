@@ -16,6 +16,10 @@ func Run() error {
 	app := mux.NewRouter()
 
 	app.HandleFunc("/chat", chat_router.ChatRouter).Methods("POST")
+	app.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("Pong"))
+	}).Methods("GET")
 
 	// Configurar CORS
 	c := cors.New(cors.Options{
