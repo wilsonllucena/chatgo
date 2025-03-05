@@ -13,20 +13,20 @@ import (
 func main() {
 	// Carrega as variáveis de ambiente do arquivo .env
 
-	// if os.LookupEnv("ENV") == "development" {
-	if err := godotenv.Load(); err != nil {
-		log.Fatalf("Erro ao carregar o arquivo .env: %v", err)
+	env := os.Getenv("ENV")
+	if env == "development" {
+		if err := godotenv.Load(); err != nil {
+			log.Fatalf("Erro ao carregar o arquivo .env: %v", err)
+		}
+	} else {
+		// Em produção, usa as variáveis de ambiente do sistema
+		if _, exists := os.LookupEnv("PORT"); !exists {
+			log.Fatal("Variável de ambiente PORT não está definida")
+		}
+		if _, exists := os.LookupEnv("OPENAI_API_KEY"); !exists {
+			log.Fatal("Variável de ambiente OPENAI_API_KEY não está definida")
+		}
 	}
-	// }
-
-	// Em produção, usa as variáveis de ambiente do sistema
-	// if _, exists := os.LookupEnv("ENV"); !exists {
-	// 	log.Fatal("Variável de ambiente ENV não está definida")
-	// }
-	// 	if _, exists := os.LookupEnv("OPENAI_API_KEY"); !exists {
-	// 		log.Fatal("Variável de ambiente OPENAI_API_KEY não está definida")
-	// 	}
-	// }
 
 	// O canal para capturar sinais de interrupção é necessário para um desligamento gracioso do servidor.
 	// Embora não seja estritamente obrigatório, é uma boa prática de programação pois:
