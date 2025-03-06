@@ -13,11 +13,10 @@ import (
 func main() {
 	// Carrega as variáveis de ambiente do arquivo .env
 
+	err := godotenv.Load()
 	env := os.Getenv("ENV")
-	if env == "development" {
-		if err := godotenv.Load(); err != nil {
-			log.Fatalf("Erro ao carregar o arquivo .env: %v", err)
-		}
+	if env == "development" && err != nil {
+		log.Fatalf("Erro ao carregar o arquivo .env: %v", err)
 	} else {
 		// Em produção, usa as variáveis de ambiente do sistema
 		if _, exists := os.LookupEnv("PORT"); !exists {
