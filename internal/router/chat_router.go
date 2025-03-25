@@ -35,6 +35,27 @@ func ChatRouter(res http.ResponseWriter, req *http.Request) {
 	sendJSONResponse(res, http.StatusOK, successResponse)
 }
 
+func PersonalRouter(res http.ResponseWriter, req *http.Request) {
+	personal := new(entity.ChatPersonal)
+
+	if err := json.NewDecoder(req.Body).Decode(personal); err != nil {
+		response := ChatResponse{
+			Success: false,
+			Message: "Invalid request format: " + err.Error(),
+		}
+		sendJSONResponse(res, http.StatusBadRequest, response)
+	}
+
+	response := handler.PersonalHandler(req.Context(), *personal)
+
+	successResponse := ChatResponse{
+		Success: true,
+		Data:    response,
+	}
+
+	sendJSONResponse(res, http.StatusOK, successResponse)
+}
+
 func sendJSONResponse(w http.ResponseWriter, statusCode int, data interface{}) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(statusCode)

@@ -7,3 +7,7 @@ type Chat struct {
 	QuestionType   string `json:"question_type"`
 	AdditionalInfo string `json:"additional_info"`
 }
+
+type ChatPersonal struct {
+	Body string `json:"body"`
+}

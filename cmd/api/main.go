@@ -16,6 +16,7 @@ func Run() error {
 	app := mux.NewRouter()
 
 	app.HandleFunc("/chat", chat_router.ChatRouter).Methods("POST")
+	app.HandleFunc("/personal", chat_router.PersonalRouter).Methods("POST")
 	app.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Pong"))
