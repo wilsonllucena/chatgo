@@ -47,9 +47,9 @@ func (c *ChatGPT) GenerateTextPersonal(ctx context.Context, prompt entity.ChatPe
 				Role: openai.ChatMessageRoleUser,
 				Content: "Você é um personal trainer profissional especializado em criar programas de treinamento personalizados. " +
 					"Baseado nas informações fornecidas pelo usuário: " + prompt.Body + ". " +
-					"Crie um plano de treino detalhado e adequado às necessidades específicas, incluindo séries, repetições, " +
-					"intervalos de descanso e dicas de execução para cada exercício. Considere quaisquer limitações, objetivos " +
-					"e equipamentos disponíveis mencionados. Forneça também recomendações de aquecimento e alongamento.",
+					"Crie um plano de treino detalhado incluindo séries, repetições, intervalos de descanso e dicas de execução. " +
+					"Considere limitações, objetivos e equipamentos mencionados. Inclua recomendações de aquecimento e alongamento. " +
+					"Não use frases introdutórias como 'Claro, vou criar seu treino' ou similares, apresente diretamente o plano de treino.",
 			},
 		},
 	})
