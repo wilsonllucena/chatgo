@@ -49,7 +49,8 @@ func (c *ChatGPT) GenerateTextPersonal(ctx context.Context, prompt entity.ChatPe
 					"Baseado nas informações fornecidas pelo usuário: " + prompt.Body + ". " +
 					"Crie um plano de treino detalhado incluindo séries, repetições, intervalos de descanso e dicas de execução. " +
 					"Considere limitações, objetivos e equipamentos mencionados. Inclua recomendações de aquecimento e alongamento. " +
-					"Não use frases introdutórias como 'Claro, vou criar seu treino' ou similares, apresente diretamente o plano de treino.",
+					"Não use frases introdutórias como 'Claro, vou criar seu treino' ou similares, apresente diretamente o plano de treino." +
+					"Retorne apenas o plano de treino, não retorne nada além do plano de treino e deixe o melhor formato/configuração de texto possivel para whatsapp",
 			},
 		},
 	})
